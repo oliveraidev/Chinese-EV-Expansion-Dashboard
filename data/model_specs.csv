@@ -1,0 +1,9 @@
+﻿brand;model;market;price_eur;range_km;range_standard;acceleration_0_100;battery_kwh;battery_type;segment;source_name;source_url;data_status
+BYD;Seal 82.5 kWh AWD Excellence;Netherlands;53690;445;EV Database real range;3.8;82.5;LFP;Premium sedan;EV Database;https://ev-database.org/car/2002/BYD-SEAL-825-kWh-AWD-Excellence;verified
+BYD;Dolphin 60.4 kWh;Netherlands;37190;350;EV Database real range;7.0;60.5;LFP;Compact hatchback;EV Database;https://ev-database.org/car/3297/BYD-DOLPHIN-604-kWh;verified
+Zeekr;001 Long Range RWD;Europe;;505;EV Database real range;7.2;94.0;NMC811;Premium shooting brake;EV Database;https://ev-database.org/car/1933/Zeekr-001-Long-Range-RWD;verified
+XPeng;G6 RWD Long Range;Europe;;435;EV Database real range;6.7;80.8;Lithium-ion;Tech SUV;EV Database;https://ev-database.org/car/3275/XPENG-G6-RWD-Long-Range;verified
+NIO;ET5 Touring Long Range;Europe;72900;485;EV Database real range;4.0;;Lithium-ion;Premium wagon;EV Database;https://ev-database.org/car/1916/NIO-ET5-Touring-Long-Range;verified
+Li Auto;L9;China;;1412;CLTC comprehensive range;5.18;52.3;EREV;Family SUV;Li Auto official;https://www.liauto.com/L9;verified
+Xiaomi Auto;SU7 Max;China;39000;800;CLTC;2.78;101.0;NMC;Performance sedan;Reuters / Xiaomi specs;https://www.reuters.com/world/asia-pacific/chinas-xiaomi-says-upgraded-su7-priced-219900-yuan-2026-03-19/;partly_verified
+Jaecoo;J5 EV;Australia;;402;WLTP/claimed market range;;60.9;Lithium-ion;Compact SUV;Omoda Jaecoo Australia;https://www.omodajaecoo.com.au/models/jaecoo-j5-bev;partly_verified
