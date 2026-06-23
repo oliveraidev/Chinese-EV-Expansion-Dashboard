@@ -78,9 +78,13 @@ Custom score based on:
 
 ## Screenshots
 
-### Main dashboard
+### Dashboard Overview
 
-See images in the `screenshots/` folder.
+![Dashboard Overview](screenshots/dashboard_overview.png)
+
+### Interactive Analysis
+
+![Interactive Analysis](screenshots/dashboard_interactive.png)
 
 ---
 
