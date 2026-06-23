@@ -6,21 +6,25 @@ st.set_page_config(page_title="Chinese EV Dashboard", layout="centered")
 
 st.title("Chinese EV Expansion Dashboard")
 
+# Data loading
 brands = pd.read_csv("../data/brands.csv", sep=";")
 models = pd.read_csv("../data/model_specs.csv", sep=";")
 expansion = pd.read_csv("../data/expansion_markets.csv", sep=";")
 
+# Merge datasets
 df = models.merge(brands, on="brand", how="left")
 df = df.merge(expansion, on="brand", how="left")
 
+# Sidebar filter
 brand_filter = st.sidebar.selectbox(
     "Brand",
-    ["All"] + sorted(df["brand"].unique())
+    ["All"] + sorted(df["brand"].dropna().unique())
 )
 
 if brand_filter != "All":
     df = df[df["brand"] == brand_filter]
 
+# Score calculation
 df["price_for_score"] = df["price_eur"].fillna(df["price_eur"].mean())
 
 df["competitiveness_score"] = (
@@ -29,6 +33,7 @@ df["competitiveness_score"] = (
     - df["price_for_score"] / 1000
 )
 
+# KPI's
 st.subheader("Key Metrics")
 
 col1, col2, col3, col4 = st.columns(4)
@@ -38,6 +43,7 @@ col2.metric("Avg range (km)", round(df["range_km"].mean()))
 col3.metric("Avg battery (kWh)", round(df["battery_kwh"].mean(), 1))
 col4.metric("Avg expansion", round(df["expansion_score"].mean(), 1))
 
+# Model table
 st.subheader("EV Models")
 
 st.dataframe(
@@ -60,6 +66,7 @@ st.dataframe(
     height=260
 )
 
+# Export ranking
 st.subheader("Top Export Brands")
 
 ranking = (
@@ -75,12 +82,12 @@ ax1.set_xlabel("")
 ax1.tick_params(axis="x", labelrotation=45, labelsize=8)
 st.pyplot(fig1, use_container_width=False)
 
+# Price vs range
 st.subheader("Price vs Range")
 
 plot_df = df.dropna(subset=["price_eur", "range_km"])
 
 fig2, ax2 = plt.subplots(figsize=(5, 3))
-
 ax2.scatter(plot_df["price_eur"], plot_df["range_km"])
 
 for _, row in plot_df.iterrows():
@@ -96,6 +103,7 @@ ax2.set_title("Price vs Range", fontsize=10)
 
 st.pyplot(fig2, use_container_width=False)
 
+# Battery analysis
 st.subheader("Average Range by Battery Type")
 
 battery_range = (
@@ -111,6 +119,7 @@ ax3.set_xlabel("")
 ax3.tick_params(axis="x", labelrotation=45, labelsize=8)
 st.pyplot(fig3, use_container_width=False)
 
+# Competitiveness ranking
 st.subheader("Competitiveness Ranking")
 
 st.dataframe(
@@ -124,6 +133,7 @@ st.dataframe(
     height=260
 )
 
+# Data notes
 st.subheader("Data Notes")
 
 st.write(
