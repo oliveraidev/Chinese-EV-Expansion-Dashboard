@@ -1,15 +1,18 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+from pathlib import Path
 
 st.set_page_config(page_title="Chinese EV Dashboard", layout="centered")
 
 st.title("Chinese EV Expansion Dashboard")
 
 # Data loading
-brands = pd.read_csv("../data/brands.csv", sep=";")
-models = pd.read_csv("../data/model_specs.csv", sep=";")
-expansion = pd.read_csv("../data/expansion_markets.csv", sep=";")
+DATA_DIR = Path(__file__).resolve().parent.parent / "data"
+
+brands = pd.read_csv(DATA_DIR / "brands.csv", sep=";")
+models = pd.read_csv(DATA_DIR / "model_specs.csv", sep=";")
+expansion = pd.read_csv(DATA_DIR / "expansion_markets.csv", sep=";")
 
 # Merge datasets
 df = models.merge(brands, on="brand", how="left")
