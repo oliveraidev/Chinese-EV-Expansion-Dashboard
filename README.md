@@ -37,6 +37,16 @@ Brands included:
 
 ---
 
+## Quick Start
+
+```bash
+git clone https://github.com/oliveraidev/Chinese-EV-Expansion-Dashboard.git
+cd Chinese-EV-Expansion-Dashboard
+python3 -m pip install -r requirements.txt
+python3 -m streamlit run dashboard/app.py
+```
+---
+
 ## Features
 
 ### Interactive Brand Filtering
