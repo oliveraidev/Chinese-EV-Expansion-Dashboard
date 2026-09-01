@@ -123,7 +123,7 @@ ax3.tick_params(axis="x", labelrotation=45, labelsize=8)
 st.pyplot(fig3, use_container_width=False)
 
 # Competitiveness ranking
-st.subheader("Competitiveness Ranking")
+st.subheader("Indicative Competitiveness Ranking")
 
 st.dataframe(
     df[
